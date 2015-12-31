@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="flame">
+        <item>@drawable/fire1_01</item>
+        <item>@drawable/fire1_02</item>
+        <item>@drawable/fire1_03</item>
+        <item>@drawable/fire1_04</item>
+        <item>@drawable/fire1_05</item>
+        <item>@drawable/fire1_06</item>
+        <item>@drawable/fire1_07</item>
+        <item>@drawable/fire1_08</item>
+        <item>@drawable/fire1_09</item>
+        <item>@drawable/fire1_10</item>
+        <item>@drawable/fire1_11</item>
+        <item>@drawable/fire1_12</item>
+        <item>@drawable/fire1_13</item>
+        <item>@drawable/fire1_14</item>
+        <item>@drawable/fire1_15</item>
+        <item>@drawable/fire1_16</item>
+        <item>@drawable/fire1_17</item>
+        <item>@drawable/fire1_18</item>
+        <item>@drawable/fire1_19</item>
+        <item>@drawable/fire1_20</item>
+        <item>@drawable/fire1_21</item>
+        <item>@drawable/fire1_22</item>
+        <item>@drawable/fire1_23</item>
+        <item>@drawable/fire1_24</item>
+        <item>@drawable/fire1_25</item>
+    </string-array>
+</resources>
