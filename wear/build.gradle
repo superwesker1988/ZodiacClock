@@ -6,7 +6,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "wesker.yanqin.zodicclocklight"
+        applicationId "wesker.yanqin.zodiacclock"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
