@@ -1,4 +1,4 @@
-package wesker.yanqin.zodicclocklight;
+package wesker.yanqin.zodiacclock;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

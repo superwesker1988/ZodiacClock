@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package wesker.yanqin.zodicclocklight;
+package wesker.yanqin.zodiacclock;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -25,7 +25,6 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -42,11 +41,13 @@ import java.util.ArrayList;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
+import wesker.yanqin.zodicclocklight.R;
+
 /**
  * Analog watch face with a ticking second hand. In ambient mode, the second hand isn't shown. On
  * devices with low-bit ambient mode, the hands are drawn without anti-aliasing in ambient mode.
  */
-public class ZodicLight extends CanvasWatchFaceService {
+public class ZodiacClock extends CanvasWatchFaceService {
     /**
      * Update rate in milliseconds for interactive mode. We update once a second to advance the
      * second hand.
@@ -64,15 +65,15 @@ public class ZodicLight extends CanvasWatchFaceService {
     }
 
     private static class EngineHandler extends Handler {
-        private final WeakReference<ZodicLight.Engine> mWeakReference;
+        private final WeakReference<ZodiacClock.Engine> mWeakReference;
 
-        public EngineHandler(ZodicLight.Engine reference) {
+        public EngineHandler(ZodiacClock.Engine reference) {
             mWeakReference = new WeakReference<>(reference);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            ZodicLight.Engine engine = mWeakReference.get();
+            ZodiacClock.Engine engine = mWeakReference.get();
             if (engine != null) {
                 switch (msg.what) {
                     case MSG_UPDATE_TIME:
@@ -120,14 +121,14 @@ public class ZodicLight extends CanvasWatchFaceService {
         public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
 
-            setWatchFaceStyle(new WatchFaceStyle.Builder(ZodicLight.this)
+            setWatchFaceStyle(new WatchFaceStyle.Builder(ZodiacClock.this)
                     .setCardPeekMode(WatchFaceStyle.PEEK_MODE_SHORT)
                     .setBackgroundVisibility(WatchFaceStyle.BACKGROUND_VISIBILITY_INTERRUPTIVE)
                     .setShowSystemUiTime(false)
                     .setAcceptsTapEvents(true)
                     .build());
 
-            Resources resources = ZodicLight.this.getResources();
+            Resources resources = ZodiacClock.this.getResources();
 
 
             mBackgroundPaint = new Paint();
@@ -210,7 +211,7 @@ public class ZodicLight extends CanvasWatchFaceService {
          */
         @Override
         public void onTapCommand(int tapType, int x, int y, long eventTime) {
-            Resources resources = ZodicLight.this.getResources();
+            Resources resources = ZodiacClock.this.getResources();
             switch (tapType) {
                 case TAP_TYPE_TOUCH:
                     // The user has started touching the screen.
@@ -304,7 +305,7 @@ public class ZodicLight extends CanvasWatchFaceService {
             }
             mRegisteredTimeZoneReceiver = true;
             IntentFilter filter = new IntentFilter(Intent.ACTION_TIMEZONE_CHANGED);
-            ZodicLight.this.registerReceiver(mTimeZoneReceiver, filter);
+            ZodiacClock.this.registerReceiver(mTimeZoneReceiver, filter);
         }
 
         private void unregisterReceiver() {
@@ -312,7 +313,7 @@ public class ZodicLight extends CanvasWatchFaceService {
                 return;
             }
             mRegisteredTimeZoneReceiver = false;
-            ZodicLight.this.unregisterReceiver(mTimeZoneReceiver);
+            ZodiacClock.this.unregisterReceiver(mTimeZoneReceiver);
         }
 
         /**

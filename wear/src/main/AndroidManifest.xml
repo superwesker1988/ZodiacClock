@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
         <service
-            android:name=".ZodicLight"
+            android:name=".ZodiacClock"
             android:label="@string/my_analog_name"
             android:permission="android.permission.BIND_WALLPAPER">
             <meta-data
