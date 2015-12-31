@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-import wesker.yanqin.zodicclocklight.R;
+import wesker.yanqin.zodiacclock.R;
 
 /**
  * Analog watch face with a ticking second hand. In ambient mode, the second hand isn't shown. On
